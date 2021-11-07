@@ -1,3 +1,10 @@
+// This program is meant for Arduino Leonardo. 
+// This can be used for keeping the computer active or 
+// prevent it from going to sleep. 
+// This basically acts as an external hardware mouse.
+
+// Note: Once it is programmed, to reprogram, short PIN#12 to GND
+
 #include <Mouse.h>
 
 const int buttonPin = 12;
@@ -14,7 +21,7 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);
   
   int time_count, time_interval;
-  time_count = time_interval = 10; // time_interval is in seconds
+  time_count = time_interval = 50; // time_interval is in seconds
   
   while(digitalRead(12) == HIGH){
     if(time_count > time_interval){
